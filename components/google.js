@@ -31,8 +31,13 @@ module.exports = () => {
         done (null, {})
 
         try {
-          const data = await axios.get('https://api.mygraphr.com/health');
-          console.log('i"m data', data)
+          if (process.env.NODE_ENV === 'production') {
+            const data = await axios.get('https://api.mygraphr.com/health');
+          } else {
+            const data = await axios.get('http://localhost:8085/health')
+          }
+          
+          console.log('i"m data', data.data)
           if (data) {
             console.log('data', data);
             return done(null, { googleId: profile.id, nickname: data });
