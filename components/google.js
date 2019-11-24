@@ -28,7 +28,7 @@ module.exports = () => {
         // console.log('accessToken', accessToken);
         // console.log('refreshToken', refreshToken);
         // console.log('profile', profile);
-        // done (null, {})
+        done (null, {})
 
         try {
           // if (process.env.NODE_ENV === 'production') {
