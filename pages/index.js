@@ -1,8 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import Link from 'next/link'
+import axios from 'axios'
 
-const Home = () => (
+const Home = () => {
+  const googleLogin = () => {
+
+  }
+
+return (
   <div>
     <Head>
       <title>Home</title>
@@ -34,6 +41,7 @@ const Home = () => (
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
       </div>
+        <a href="http://localhost:3000/auth/google">Login with google!!</a>
     </div>
 
     <style jsx>{`
@@ -84,5 +92,6 @@ const Home = () => (
     `}</style>
   </div>
 )
+} 
 
 export default Home
