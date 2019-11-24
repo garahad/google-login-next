@@ -36,8 +36,9 @@ app.prepare().then(() => {
 
   server.get(
     '/auth/google/callback', 
-      passport.authenticate('google', { failureRedirect: '/' }),
-      () => {console.log('hihi')}
+      passport.authenticate('google', (req,res) => {
+        console.log('hihi')
+      })
   );
 
   server.get('/health', (req,res) => {
