@@ -15,11 +15,11 @@ return (
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Link href="/auth/google">
-      <a>
+    {/* <Link href="/auth/google"> */}
+      <a href="/auth/google">
         Login with google!
       </a>
-    </Link>
+    {/* </Link> */}
   </div>
 )
 } 

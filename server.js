@@ -17,11 +17,6 @@ app.prepare().then(() => {
 
   server.use(passport.initialize());
 
-  if (process.env.NODE_ENV === 'production') {
-    server.use(morgan('dev'));
-  } else {
-    server.use(morgan('conbined'));
-  }
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
 
