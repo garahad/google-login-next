@@ -27,9 +27,11 @@ module.exports = () => {
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
-        User.findOrCreate({ googleId: profile.id }, function(err, user) {
-          return done(err, user);
-        });
+        return done(err, {googleId: profile.id, name: 'yonggyu'})
+
+        // User.findOrCreate({ googleId: profile.id }, function(err, user) {
+        //   return done(err, user);
+        // });
       },
     ),
   );
