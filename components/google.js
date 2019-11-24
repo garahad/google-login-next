@@ -31,7 +31,8 @@ module.exports = () => {
         done (null, {})
 
         try {
-          const { data } = await axios.get('/user/google');
+          const data = await axios.get('/user/google');
+          console.log('i"m data', data)
           if (data) {
             console.log('data', data);
             return done(null, { googleId: profile.id, nickname: data });
