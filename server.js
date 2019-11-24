@@ -27,8 +27,6 @@ app.prepare().then(() => {
 
   google();
 
-
-
   server.get(
     '/auth/google', 
       passport.authenticate('google', {
