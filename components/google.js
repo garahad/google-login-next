@@ -28,7 +28,7 @@ module.exports = () => {
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
-        // done (null, {})
+        done (null, {})
 
         try {
           const { data } = await axios.get('/user/google');
