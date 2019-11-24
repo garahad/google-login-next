@@ -27,7 +27,7 @@ module.exports = () => {
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
-        return done(err, {googleId: profile.id, name: 'yonggyu'})
+        return done(null, {googleId: profile.id, name: 'yonggyu'})
 
         // User.findOrCreate({ googleId: profile.id }, function(err, user) {
         //   return done(err, user);
