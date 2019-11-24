@@ -29,12 +29,19 @@ module.exports = () => {
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
 
-        const { data } = await axios.get('/user/google');
-
-        if (data) {
-          console.log('data', data);
-          return done(null, { googleId: profile.id, nickname: data });
+        try {
+          const { data } = await axios.get('/user/google');
+          if (data) {
+            console.log('data', data);
+            return done(null, { googleId: profile.id, nickname: data });
+          } else {
+            console.log('there is no user... signup will start')
+          }
+        } catch(e) {
+          console.error(e);
         }
+
+        
 
         // return done(null, {googleId: profile.id, name: 'yonggyu'})
 
