@@ -1,5 +1,6 @@
 module.exports = () => {
   var passport = require('passport');
+  const axios = require('axios');
   var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
   passport.serializeUser(function(user, done) {
@@ -28,9 +29,14 @@ module.exports = () => {
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
 
-        await 
+        const { data } = await axios.get('/user/google');
 
-        return done(null, {googleId: profile.id, name: 'yonggyu'})
+        if (data) {
+          console.log('data', data);
+          return done(null, { googleId: profile.id, nickname: data });
+        }
+
+        // return done(null, {googleId: profile.id, name: 'yonggyu'})
 
         // User.findOrCreate({ googleId: profile.id }, function(err, user) {
         //   return done(err, user);
