@@ -40,6 +40,10 @@ app.prepare().then(() => {
       () => {console.log('hihi')}
   );
 
+  server.get('/health', (req,res) => {
+    res.status(200).send('hello world');
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res);
   });
