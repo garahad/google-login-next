@@ -25,9 +25,9 @@ module.exports = () => {
             : 'http://localhost:3000/auth/google/callback',
       },
       async function(accessToken, refreshToken, profile, done) {
-        console.log('accessToken', accessToken);
-        console.log('refreshToken', refreshToken);
-        console.log('profile', profile);
+        // console.log('accessToken', accessToken);
+        // console.log('refreshToken', refreshToken);
+        // console.log('profile', profile);
         done (null, {})
 
         try {
@@ -40,7 +40,8 @@ module.exports = () => {
             console.log('there is no user... signup will start')
           }
         } catch(e) {
-          console.log("i'm error");
+          console.log("i'm error====================");
+          console.log(e);
         }
 
         
