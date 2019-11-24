@@ -28,14 +28,15 @@ module.exports = () => {
         // console.log('accessToken', accessToken);
         // console.log('refreshToken', refreshToken);
         // console.log('profile', profile);
-        done (null, {})
+        // done (null, {})
 
         try {
-          if (process.env.NODE_ENV === 'production') {
-            const data = await axios.get('https://api.mygraphr.com/health');
-          } else {
-            const data = await axios.get('http://localhost:8085/health')
-          }
+          // if (process.env.NODE_ENV === 'production') {
+          //   const data = await axios.get('https://api.mygraphr.com/health');
+          // } else {
+          //   const data = await axios.get('http://localhost:8085/health')
+          // }
+          const data = await axios.get('https://api.mygraphr.com/api/todo/8');
           
           console.log('i"m data', data.data)
           if (data) {
