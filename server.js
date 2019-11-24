@@ -31,17 +31,18 @@ app.prepare().then(() => {
 
   server.get(
     '/auth/google/callback', 
-      passport.authenticate('google', (req,res) => {
-        console.log('hihi')
-      })
+      passport.authenticate('google', { failureRedirect: '/health' }),
+      function(req, res) {
+        res.redirect('/privacy');
+    }
   );
 
   server.get('/health', (req,res) => {
-    res.status(200).send('hello world');
+    res.status(200).send('health');
   })
 
   server.get('/privacy', (req,res) => {
-    res.status(200).send('hello world');
+    res.status(200).send('privacy');
   })
 
   server.get('*', (req, res) => {
