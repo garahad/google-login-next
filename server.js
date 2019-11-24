@@ -28,20 +28,18 @@ app.prepare().then(() => {
   google();
 
   server.get(
-    '/auth/google/callback*',
-    passport.authenticate('google', { failureRedirect: '/' }),
-    function(req, res) {
-      res.redirect('/');
-    },
+    '/auth/google/callback*', (req,res) => 
+      passport.authenticate('google', { failureRedirect: '/' }),
+      function(req, res) {
+        res.redirect('/');
+      }
   );
 
   server.get(
-    '/auth/google*', (req,res) => {
-      console.log('here is auth/google')
+    '/auth/google*', 
       passport.authenticate('google', {
         scope: ['https://www.googleapis.com/auth/plus.login'],
       })
-    }
   );
 
   server.get('*', (req, res) => {
