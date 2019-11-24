@@ -20,7 +20,7 @@ module.exports = () => {
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         callbackURL:
           process.env.NODE_ENV === 'production'
-            ? 'http://www.mygraphr.com:3000/auth/google/callback'
+            ? 'https://www.mygraphr.com/auth/google/callback'
             : 'http://localhost:3000/auth/google/callback',
       },
       function(accessToken, refreshToken, profile, done) {

@@ -44,6 +44,10 @@ app.prepare().then(() => {
     res.status(200).send('hello world');
   })
 
+  server.get('/privacy', (req,res) => {
+    res.status(200).send('hello world');
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res);
   });
