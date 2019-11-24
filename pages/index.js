@@ -41,7 +41,7 @@ return (
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
       </div>
-        <a href="http://localhost:3000/auth/google">Login with google!!</a>
+        <a href="http://www.mygraphr.com:3000/auth/google">Login with google!!</a>
     </div>
 
     <style jsx>{`
