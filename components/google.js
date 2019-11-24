@@ -28,6 +28,7 @@ module.exports = () => {
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
+        // done (null, {})
 
         try {
           const { data } = await axios.get('/user/google');
@@ -38,7 +39,7 @@ module.exports = () => {
             console.log('there is no user... signup will start')
           }
         } catch(e) {
-          console.error(e);
+          console.log("i'm error");
         }
 
         
