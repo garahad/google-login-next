@@ -28,11 +28,9 @@ app.prepare().then(() => {
   google();
 
   server.get(
-    '/auth/google/callback*', (req,res) => 
+    '/auth/google/callback*', 
       passport.authenticate('google', { failureRedirect: '/' }),
-      function(req, res) {
-        res.redirect('/');
-      }
+      console.log('hihi')
   );
 
   server.get(
