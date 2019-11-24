@@ -27,17 +27,19 @@ app.prepare().then(() => {
 
   google();
 
-  server.get(
-    '/auth/google/callback*', 
-      passport.authenticate('google', { failureRedirect: '/' }),
-      () => {console.log('hihi')}
-  );
+
 
   server.get(
-    '/auth/google*', 
+    '/auth/google', 
       passport.authenticate('google', {
         scope: ['https://www.googleapis.com/auth/plus.login'],
       })
+  );
+
+  server.get(
+    '/auth/google/callback', 
+      passport.authenticate('google', { failureRedirect: '/' }),
+      () => {console.log('hihi')}
   );
 
   server.get('*', (req, res) => {
