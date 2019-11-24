@@ -23,10 +23,13 @@ module.exports = () => {
             ? 'https://www.mygraphr.com/auth/google/callback'
             : 'http://localhost:3000/auth/google/callback',
       },
-      function(accessToken, refreshToken, profile, done) {
+      async function(accessToken, refreshToken, profile, done) {
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
         console.log('profile', profile);
+
+        await 
+
         return done(null, {googleId: profile.id, name: 'yonggyu'})
 
         // User.findOrCreate({ googleId: profile.id }, function(err, user) {

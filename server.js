@@ -25,7 +25,7 @@ app.prepare().then(() => {
   server.get(
     '/auth/google', 
       passport.authenticate('google', {
-        scope: ['https://www.googleapis.com/auth/plus.login'],
+        scope: ['https://www.googleapis.com/auth/plus.login', 'email'],
       })
   );
 
