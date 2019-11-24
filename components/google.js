@@ -36,7 +36,7 @@ module.exports = () => {
           // } else {
           //   const data = await axios.get('http://localhost:8085/health')
           // }
-          const data = await axios.get('https://api.mygraphr.com/api/todo/8');
+          const data = await axios.get('https://api.mygraphr.com/hello');
           
           console.log('i"m data', data.data)
           if (data) {
