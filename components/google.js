@@ -31,7 +31,7 @@ module.exports = () => {
         done (null, {})
 
         try {
-          const data = await axios.get('https://api.mygraphr.com/api/user/google');
+          const data = await axios.get('https://api.mygraphr.com/health');
           console.log('i"m data', data)
           if (data) {
             console.log('data', data);
