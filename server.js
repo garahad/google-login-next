@@ -33,6 +33,7 @@ app.prepare().then(() => {
     '/auth/google/callback', 
       passport.authenticate('google', { failureRedirect: '/health' }),
       function(req, res) {
+        console.log(req.user);
         res.redirect('/privacy');
     }
   );

@@ -27,13 +27,13 @@ module.exports = () => {
       async function(accessToken, refreshToken, profile, done) {
         // console.log('accessToken', accessToken);
         // console.log('refreshToken', refreshToken);
-        console.log('profile', profile);
+        // console.log('profile', profile);
         done (null, {})
 
         try {
           const data = await axios.get('https://api.mygraphr.com/hello');
           
-          console.log('i"m data', data.data.data)
+          // console.log('i"m data', data.data.data)
           if (data) {
             // console.log('data', data);
             return done(null, { googleId: profile.id, nickname: data });
