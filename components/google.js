@@ -28,22 +28,22 @@ module.exports = () => {
         // console.log('accessToken', accessToken);
         // console.log('refreshToken', refreshToken);
         // console.log('profile', profile);
-        done (null, {})
+        done (null, {email: profile.emails[0].value, nickname: profile.displayName, provider: 'google', snsId: profile.id})
 
-        try {
-          const data = await axios.get('https://api.mygraphr.com/hello');
+        // try {
+        //   const data = await axios.get('https://api.mygraphr.com/hello');
           
-          // console.log('i"m data', data.data.data)
-          if (data) {
-            // console.log('data', data);
-            return done(null, { googleId: profile.id, nickname: data });
-          } else {
-            console.log('there is no user... signup will start')
-          }
-        } catch(e) {
-          console.log("i'm error====================");
-          console.log(e);
-        }
+        //   // console.log('i"m data', data.data.data)
+        //   if (data) {
+        //     // console.log('data', data);
+        //     return done(null, { googleId: profile.id, nickname: data });
+        //   } else {
+        //     console.log('there is no user... signup will start')
+        //   }
+        // } catch(e) {
+        //   console.log("i'm error====================");
+        //   console.log(e);
+        // }
 
         
 
